@@ -1,0 +1,13 @@
+/* catalogue.css */
+body { font-family: Arial, sans-serif; margin: 0; }
+h1 { text-align: center; }
+nav { background: #2c3e50; padding: 10px; text-align: center; }
+nav a { color: white; margin: 0 15px; text-decoration: none; }
+.catalogue { display: flex; flex-wrap: wrap; justify-content: center; }
+.book { border: 1px solid #ccc; border-radius: 8px; margin: 10px; padding: 15px; width: 200px; text-align: center; }
+.fiction { background: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f') no-repeat center/cover; color: white; }
+.science { background: url('https://images.unsplash.com/photo-1581090700227-4c4d1a3b8f5d') no-repeat center/cover; color: white; }
+.tech { background: url('https://images.unsplash.com/photo-1518770660439-4636190af475') no-repeat center/cover; color: white; }
+.fantasy { background: url('https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d') no-repeat center/cover; color: white; }
+button { background: #27ae60; color: white; border: none; padding: 8px; border-radius: 4px; }
+button:hover { background: #2ecc71; }
