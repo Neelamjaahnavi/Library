@@ -2,14 +2,48 @@
 <html>
 <head>
   <title>Catalogue - Online Book Store</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>Book Catalogue</h1>
-  <ul>
-    <li>Book 1 - <button>Add to Cart</button></li>
-    <li>Book 2 - <button>Add to Cart</button></li>
-    <li>Book 3 - <button>Add to Cart</button></li>
-    <li>Book 4 - <button>Add to Cart</button></li>
-  </ul>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="catalogue.html">Catalogue</a>
+    <a href="login.html">Login</a>
+    <a href="register.html">Register</a>
+    <a href="cart.html">Cart</a>
+  </nav>
+
+  <div class="catalogue">
+    <div class="book">
+      <h3>Fiction: The Alchemist</h3>
+      <p>₹350</p>
+      <button onclick="addToCart('The Alchemist', 350)">Add to Cart</button>
+    </div>
+    <div class="book">
+      <h3>Science: Brief History of Time</h3>
+      <p>₹500</p>
+      <button onclick="addToCart('Brief History of Time', 500)">Add to Cart</button>
+    </div>
+    <div class="book">
+      <h3>Technology: Clean Code</h3>
+      <p>₹650</p>
+      <button onclick="addToCart('Clean Code', 650)">Add to Cart</button>
+    </div>
+    <div class="book">
+      <h3>Fantasy: Harry Potter</h3>
+      <p>₹400</p>
+      <button onclick="addToCart('Harry Potter', 400)">Add to Cart</button>
+    </div>
+  </div>
+
+  <script>
+    function addToCart(book, price) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push({title: book, price: price});
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(book + " added to cart!");
+    }
+  </script>
 </body>
 </html>
