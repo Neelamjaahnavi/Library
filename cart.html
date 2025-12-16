@@ -21,14 +21,5 @@
   <h2 id="total"></h2>
 
   <script>
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    let table = document.getElementById("cartTable");
-    let total = 0;
-
-    cart.forEach((item, index) => {
-      let row = table.insertRow();
-      row.insertCell(0).innerText = item.title;
-      row.insertCell(1).innerText = item.price;
-      let removeBtn = document.createElement("button");
-      removeBtn.innerText = "Remove";
-      removeBtn.onclick = function() {
+    // Load cart from localStorage
+    let cart = JSON.parse(localStorage
