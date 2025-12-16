@@ -2,22 +2,20 @@
 <html>
 <head>
   <title>Cart - Online Book Store</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="cart.css">
 </head>
 <body>
   <h1>Your Shopping Cart</h1>
   <nav>
     <a href="index.html">Home</a>
     <a href="catalogue.html">Catalogue</a>
-    <a href="login.html">Login</a>
-    <a href="register.html">Register</a>
-    <a href="cart.html">Cart</a>
   </nav>
 
-  <table class="cart-table" id="cartTable">
+  <table id="cartTable">
     <tr>
       <th>Book Title</th>
       <th>Price (₹)</th>
+      <th>Action</th>
     </tr>
   </table>
   <h2 id="total"></h2>
@@ -27,14 +25,10 @@
     let table = document.getElementById("cartTable");
     let total = 0;
 
-    cart.forEach(item => {
+    cart.forEach((item, index) => {
       let row = table.insertRow();
       row.insertCell(0).innerText = item.title;
       row.insertCell(1).innerText = item.price;
-      total += item.price;
-    });
-
-    document.getElementById("total").innerText = "Total: ₹" + total;
-  </script>
-</body>
-</html>
+      let removeBtn = document.createElement("button");
+      removeBtn.innerText = "Remove";
+      removeBtn.onclick = function() {
