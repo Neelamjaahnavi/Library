@@ -1,0 +1,22 @@
+/* register.css */
+body {
+  background: linear-gradient(to right, #ff9966, #ff5e62);
+  font-family: Arial, sans-serif;
+}
+.register-box {
+  background: white;
+  padding: 30px;
+  margin: 100px auto;
+  width: 350px;
+  border-radius: 8px;
+  text-align: center;
+}
+button {
+  background: #e67e22;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 4px;
+}
+button:hover { background: #d35400; }
