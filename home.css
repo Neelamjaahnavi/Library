@@ -1,0 +1,18 @@
+/* home.css */
+body {
+  background: url('https://images.unsplash.com/photo-1512820790803-83ca734da794') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+nav {
+  background: rgba(0,0,0,0.7);
+  padding: 10px;
+}
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
+nav a:hover { color: #f39c12; }
