@@ -2,27 +2,39 @@
 <html>
 <head>
   <title>Cart - Online Book Store</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>Your Shopping Cart</h1>
-  <table border="1">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="catalogue.html">Catalogue</a>
+    <a href="login.html">Login</a>
+    <a href="register.html">Register</a>
+    <a href="cart.html">Cart</a>
+  </nav>
+
+  <table class="cart-table" id="cartTable">
     <tr>
       <th>Book Title</th>
-      <th>Quantity</th>
-      <th>Price</th>
-    </tr>
-    <tr>
-      <td>Book 1</td>
-      <td>1</td>
-      <td>$10</td>
-    </tr>
-    <tr>
-      <td>Book 2</td>
-      <td>2</td>
-      <td>$20</td>
+      <th>Price (₹)</th>
     </tr>
   </table>
-  <p>Total: $30</p>
-  <button>Checkout</button>
+  <h2 id="total"></h2>
+
+  <script>
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let table = document.getElementById("cartTable");
+    let total = 0;
+
+    cart.forEach(item => {
+      let row = table.insertRow();
+      row.insertCell(0).innerText = item.title;
+      row.insertCell(1).innerText = item.price;
+      total += item.price;
+    });
+
+    document.getElementById("total").innerText = "Total: ₹" + total;
+  </script>
 </body>
 </html>
